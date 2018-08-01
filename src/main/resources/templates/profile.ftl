@@ -1,12 +1,13 @@
 
     <#include "layout.ftl">
+
     <body class="bg-light" style="position:relative" >
     <div class="container">
 
         <br>
         <div class="card">
             <div class="card-header bg-dark">
-        <div class="container form-inline" class="bg-dark" style="padding-top:2%">
+        <div id="dropzone" class="container form-inline" class="bg-dark" style="padding-top:2%">
         <img src="data:image/jpeg;base64, ${perfil.getProfilepic()}" class="img-thumbnail" style="height:200px;width:auto; max-width:200px;">
     <h2 class="text-white" style="margin-left:2%">${perfil.getNombre()} ${perfil.getApellido()}</h2>
             <#if isFriend == true && owner == false>
@@ -25,10 +26,9 @@
              </div>
             <#else>
             <div class="container">
-           <form method='post' enctype='multipart/form-data' action="/subirfoto">
-
-    <input type='file' id="uploaded_file" name='uploaded_file' accept=".jpg, .jpeg, .png" required>
-    <button id="submit" type="hidden" class="btn btn-default btn-xs">Cambiar Foto de Perfil</button>
+           <form method='post' enctype='multipart/form-data' action="/subirfoto"> <img src=""/>
+            <input type='file' id="uploaded_file" name='uploaded_file' accept=".jpg, .jpeg, .png" required>
+            <button id="submit" type="hidden" class="btn btn-default btn-xs">Cambiar Foto de Perfil</button>
 
             </form>
 
@@ -396,5 +396,33 @@
 
     });
 
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var el = ev.target;
+        if (!el.classList.contains('dropzone')) {
+            el = ev.target.parentNode;
+            ev.target.remove();
+        }
+        el.appendChild(document.getElementById(data).cloneNode(true));
+    }
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementsByTagName("body")[0].style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementsByTagName("body")[0].style.marginLeft= "0";
+    }
 
 </script>

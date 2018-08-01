@@ -2,6 +2,8 @@ plugins {
     id 'java'
 }
 
+apply plugin: 'application'
+
 group 'ce.pucmm.edu.do'
 version '1.0-SNAPSHOT'
 
@@ -10,8 +12,6 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
-
-apply plugin: 'application'
 
 mainClassName = "Main"
 
