@@ -33,15 +33,15 @@ import static spark.Spark.staticFileLocation;
 public class Main {
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         UserDaoImpl usuarioadmin = new UserDaoImpl(User.class);
         ProfileDaoImpl profileadmin = new ProfileDaoImpl(Profile.class);
         WallDaoImpl wallDao = new WallDaoImpl(Wall.class);
         EventDaoImpl eventoDao = new EventDaoImpl(Event.class);
         PostDaoImpl postDao = new PostDaoImpl(Post.class);
-
-
+        SoapUtils.stop();
+        SoapUtils.init();
         try{
             ConnectionService.startDb();
         }

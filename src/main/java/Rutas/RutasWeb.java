@@ -142,7 +142,7 @@ public class RutasWeb {
 
             User user = new User();
             if(request.cookie("username")!=null) {
-                user = usuarioDao.searchByUsername(request.cookie("username").toString());
+                user = usuarioDao.searchByUsername(request.cookie("username"));
 
                 attributes.put("usuario", user);
                 attributes.put("perfil", user.getUsername());

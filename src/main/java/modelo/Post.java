@@ -34,7 +34,7 @@ public class Post implements Serializable {
     @OneToMany( cascade = CascadeType.ALL)
     @JoinTable(name = "postValoraciones", joinColumns = {@JoinColumn(name = "post_id")}, inverseJoinColumns = {@JoinColumn(name = "likeDislike_id")})
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<LikeDislike> valoraciones;
+    private List<LikeDislike> valoraciones;
 
     @OneToOne( fetch = FetchType.EAGER)
     @JoinColumn(name = "photo_id")
@@ -50,7 +50,7 @@ public class Post implements Serializable {
 
     @OneToMany(  mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
-    private Set<Comment> comments = new HashSet<>();;
+    private List<Comment> comments = new ArrayList<>();
 
     @OneToOne( fetch = FetchType.EAGER)
     @JoinColumn(name ="tag_id")
@@ -61,8 +61,8 @@ public class Post implements Serializable {
     public Post(){
         super();
     }
-    public Post(Integer id, String texto, LocalDate fecha, Integer likes, Set<LikeDislike> valoraciones,
-                User user, Wall wall, Set<Comment> comments, Tag tag,Photo photo)
+    public Post(Integer id, String texto, LocalDate fecha, Integer likes, List<LikeDislike> valoraciones,
+                User user, Wall wall, List<Comment> comments, Tag tag,Photo photo)
     {
         this.id = id;
         this.texto = texto;
@@ -108,11 +108,11 @@ public class Post implements Serializable {
         this.user = user;
     }
 
-    public Set<Comment> getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(Set<Comment> comments) {
+    public void setComments(List<Comment> comments) {
 
             this.comments = comments;
 
@@ -157,7 +157,7 @@ public class Post implements Serializable {
         this.tag = etiqueta;
     }
 
-    public Set<LikeDislike> getValoraciones() {
+    public List<LikeDislike> getValoraciones() {
         return valoraciones;
     }
 
@@ -177,7 +177,7 @@ public class Post implements Serializable {
         return conta;
     }
 
-    public void setValoraciones(Set<LikeDislike> valoraciones) {
+    public void setValoraciones(List<LikeDislike> valoraciones) {
         this.valoraciones = valoraciones;
     }
 }
