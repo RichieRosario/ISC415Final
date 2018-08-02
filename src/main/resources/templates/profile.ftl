@@ -7,7 +7,7 @@
         <br>
         <div class="card">
             <div class="card-header bg-dark">
-        <div id="dropzone" class="container form-inline" class="bg-dark" style="padding-top:2%">
+        <div class="container form-inline" class="bg-dark" style="padding-top:2%">
         <img src="data:image/jpeg;base64, ${perfil.getProfilepic()}" class="img-thumbnail" style="height:200px;width:auto; max-width:200px;">
     <h2 class="text-white" style="margin-left:2%">${perfil.getNombre()} ${perfil.getApellido()}</h2>
             <#if isFriend == true && owner == false>
@@ -25,12 +25,12 @@
             </div>
              </div>
             <#else>
-            <div class="container">
-           <form method='post' enctype='multipart/form-data' action="/subirfoto"> <img src=""/>
-            <input type='file' id="uploaded_file" name='uploaded_file' accept=".jpg, .jpeg, .png" required>
+            <div id="drop-container" class="container">
+                <div id="drop-area-text">
+                    Drag and Drop Images Here
+                </div>
+            <input type='file'  id="uploaded_file" name='uploaded_file' accept=".jpg, .jpeg, .png" required>
             <button id="submit" type="hidden" class="btn btn-default btn-xs">Cambiar Foto de Perfil</button>
-
-            </form>
 
         </div>
         </div>
@@ -396,33 +396,49 @@
 
     });
 
-    function allowDrop(ev) {
-        ev.preventDefault();
+
+
+    $(document).ready(function() {
+        $("#drop-container").on('dragenter', function(e) {
+            e.preventDefault();
+            $(this).css('border', '#39b311 2px dashed');
+            $(this).css('background', '#f1ffef');
+        });
+
+        $("#drop-container").on('dragover', function(e) {
+            e.preventDefault();
+        });
+
+        $("#drop-container").on('drop', function(e) {
+            $(this).css('border', '#07c6f1 2px dashed');
+            $(this).css('background', '#FFF');
+            e.preventDefault();
+            var image = e.originalEvent.dataTransfer.files;
+            createFormData(image);
+        });
+    });
+    //
+    function createFormData(image) {
+        var formImage = new FormData();
+        formImage.append('uploaded_file', image[0]);
+        uploadFormData(formImage);
     }
 
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
+    function uploadFormData(formData) {
+        $.ajax({
+            url: "/subirfoto",
+            type: "POST",
+            data: formData,
+            contentType:false,
+            cache: false,
+            processData: false,
+            success: function(response){
+                var imagePreview = $(".drop-image").clone();
+                imagePreview.attr("src", response);
+                imagePreview.removeClass("drop-image");
+                imagePreview.addClass("preview");
+                $('#drop-container').append(imagePreview);
+            }
+        });
     }
-
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        var el = ev.target;
-        if (!el.classList.contains('dropzone')) {
-            el = ev.target.parentNode;
-            ev.target.remove();
-        }
-        el.appendChild(document.getElementById(data).cloneNode(true));
-    }
-
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementsByTagName("body")[0].style.marginLeft = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementsByTagName("body")[0].style.marginLeft= "0";
-    }
-
 </script>
