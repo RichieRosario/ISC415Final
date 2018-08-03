@@ -1,11 +1,10 @@
 plugins {
     id 'java'
 }
-<<<<<<< HEAD
+
 apply plugin: 'java'
 apply plugin: 'application'
-=======
->>>>>>> parent of 2ca2f72... plugin added
+
 
 group 'ce.pucmm.edu.do'
 version '1.0-SNAPSHOT'

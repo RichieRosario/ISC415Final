@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
+
     <list default="true" id="509fc774-b47e-40ad-be91-7728d46ce852" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/modelo/PostSOAP.java" afterDir="false" />
@@ -170,7 +170,7 @@
 =======
             <state relative-caret-position="446">
               <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
->>>>>>> parent of 2ca2f72... plugin added
+
             </state>
           </provider>
         </entry>
@@ -186,12 +186,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-<<<<<<< HEAD
-=======
+
       <find>borrar</find>
       <find>profile/</find>
       <find>post</find>
->>>>>>> parent of 2ca2f72... plugin added
+
       <find>Photo</find>
       <find>Post</find>
       <find>setFoto</find>
@@ -218,13 +217,11 @@
       <find>comentario</find>
       <find>/like/foto</find>
       <find>editarAlb</find>
-<<<<<<< HEAD
       <find>file</find>
       <find>drop-zone</find>
       <find>hola</find>
       <find>addPost</find>
-=======
->>>>>>> parent of 2ca2f72... plugin added
+
     </findStrings>
     <dirStrings>
       <dir />
@@ -438,15 +435,14 @@
     </option>
     <option name="modificationStamps">
       <map>
-<<<<<<< HEAD
+
         <entry key="$PROJECT_DIR$" value="6131560434000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="117449984" />
-=======
+
         <entry key="$PROJECT_DIR$" value="6129147495000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3807678451" />
->>>>>>> parent of 2ca2f72... plugin added
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2083459160" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="4091542969" />
       </map>
@@ -667,7 +663,7 @@
         <option value="$PROJECT_DIR$/src/main/java/modelo/Profile.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/layout.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.ftl" />
-<<<<<<< HEAD
+
         <option value="$PROJECT_DIR$/src/main/resources/templates/crearAlbum.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/Rutas/RutasWeb.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelo/Event.java" />
@@ -686,10 +682,9 @@
         <option value="$PROJECT_DIR$/src/main/java/servicios/JsonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/servicios/AcademicWebServices.java" />
-=======
+
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/Rutas/RutasWeb.java" />
->>>>>>> parent of 2ca2f72... plugin added
       </list>
     </option>
   </component>
@@ -708,21 +703,18 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-<<<<<<< HEAD
+
   <component name="ProjectFrameBounds">
-=======
+
   <component name="ProjectFrameBounds" extendedState="7">
->>>>>>> parent of 2ca2f72... plugin added
+
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="878" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-=======
->>>>>>> parent of 2ca2f72... plugin added
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -733,7 +725,7 @@
         <subPane>
           <expand>
             <path>
-<<<<<<< HEAD
+
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
@@ -751,7 +743,7 @@
             <path>
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-=======
+
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
@@ -784,59 +776,49 @@
             <path>
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
->>>>>>> parent of 2ca2f72... plugin added
+
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hibernate" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-<<<<<<< HEAD
+
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-=======
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
->>>>>>> parent of 2ca2f72... plugin added
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="modelo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-<<<<<<< HEAD
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-=======
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
->>>>>>> parent of 2ca2f72... plugin added
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Rutas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-<<<<<<< HEAD
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-=======
+
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
->>>>>>> parent of 2ca2f72... plugin added
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Rutas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-<<<<<<< HEAD
               <item name="ISC415Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISC415Final" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-=======
               <item name="Parcial2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parcial 2" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
->>>>>>> parent of 2ca2f72... plugin added
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
