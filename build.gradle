@@ -5,7 +5,6 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'application'
 
-
 group 'ce.pucmm.edu.do'
 version '1.0-SNAPSHOT'
 
