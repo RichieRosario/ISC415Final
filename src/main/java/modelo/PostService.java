@@ -1,10 +1,17 @@
 package modelo;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
-public class PostSOAP {
+@Root
+public class PostService {
 
+    @Element(required = false)
     private String foto;
+    @Element
     private String cuerpo;
+    @Element
     private String user;
+    @Element(required = false)
     private String etiqueta;
 
     public void setFoto(String foto){

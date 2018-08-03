@@ -1,27 +1,37 @@
 package servicios;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import dao.*;
+import encapsulacion.Estudiante;
 import modelo.*;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
-/**
- * Created by vacax on 18/06/17.
- */
-@WebService
-public class AcademicWebServices {
+public class RESTService {
 
-    @WebMethod
-    public String holaMundo(String hola){
-        return hola;
+    private static RESTService instancia;
+    private static List<Post> listaPosts = new ArrayList<>();
+
+
+    private RESTService(){
+        super();
     }
 
+    public static RESTService getInstancia(){
+        if(instancia==null){
+           instancia = new RESTService();
+        }
+        return instancia;
+    }
 
-    @WebMethod
+    /**
+     * Lista todos las publicaciones dado un usuario.
+     * @param username
+     * @return
+     */
     public List<PostService> getPublicaciones(String username){
         UserDaoImpl userDao = new UserDaoImpl(User.class);
         User u = userDao.searchByUsername(username);
@@ -31,44 +41,49 @@ public class AcademicWebServices {
             if(p.getPhoto() !=null)tmp.setFoto(p.getPhoto().getFoto());
             tmp.setCuerpo(p.getTexto());
             tmp.setUser(p.getUser().getUsername());
-        if(p.getEtiqueta() !=null){
-           if(p.getEtiqueta().getUsers() !=null){
-               tmp.setTag(p.getEtiqueta().getUsers().getUsername());
-           }
-        }
+            if(p.getEtiqueta() !=null){
+                if(p.getEtiqueta().getUsers() !=null){
+                    tmp.setTag(p.getEtiqueta().getUsers().getUsername());
+                }
+            }
             listado.add(tmp);
         }
         return listado;
     }
 
-    @WebMethod
-    public void CrearPublicacion(byte[] foto, String target, String etiqueta, String cuerpo){
+
+    /**
+     * Crea un nuevo post.
+     * @param post
+     * @return
+     */
+    public PostService crearPublicacion(PostService post){
         UserDaoImpl userDao = new UserDaoImpl(User.class);
         NotificationDaoImpl notificationDao = new NotificationDaoImpl(Notification.class);
         PhotoDaoImpl photoDao = new PhotoDaoImpl(Photo.class);
         PostDaoImpl postDao = new PostDaoImpl(Post.class);
         TagDaoImpl tagDao = new TagDaoImpl(Tag.class);
-        User u = userDao.searchByUsername(target);
+        User u = userDao.searchByUsername(post.getUser());
         Post n = new Post();
         Tag t = new Tag();
         Photo p = new Photo();
-        t.setUsers(userDao.searchByUsername(etiqueta));
-        if(foto!=null)p.setFoto(foto);
+        t.setUsers(userDao.searchByUsername(post.getTag()));
+        if(post.getFoto()!=null)p.setFoto(Base64.getDecoder().decode(post.getFoto()));
         n.setEtiqueta(t);
-        n.setTexto(cuerpo);
+        n.setTexto(post.getCuerpo());
         n.setLikes(0);
         n.setFecha(LocalDate.now());
         n.setWall(u.getWall());
-        if(foto!=null)n.setPhoto(p);
-        n.setUser(userDao.searchByUsername("clienteSOAP"));
+        if(post.getFoto()!=null)n.setPhoto(p);
+        n.setUser(userDao.searchByUsername("clienteREST"));
 
         tagDao.add(t);
-        if(foto!=null)photoDao.add(p);
+        if(post.getFoto()!=null)photoDao.add(p);
         postDao.add(n);
         System.out.println("Publicacion creada");
+        return post;
 
     }
 
-
-
+    
 }
